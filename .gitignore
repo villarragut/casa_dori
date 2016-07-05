@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+casa_dori_venv
+db.sqlite3
+/static
+.DS_Store
