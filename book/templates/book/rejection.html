@@ -1,0 +1,18 @@
+{% extends 'book/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+No ha sido posible realizar tu reserva en Casa Dori por el siguiente motivo:
+<br>
+<br>
+{{ error.text }}
+<br>
+<br>
+Te invitamos a que vuelvas a hacer la reserva.
+
+
+
+
+
+{% endblock %}

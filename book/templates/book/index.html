@@ -1,31 +1,51 @@
-<html>
-    <head>
-        <title>Casa Dori</title>
-    </head>
-    <body>
+{% extends 'book/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+        
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="https://raw.githubusercontent.com/jquery/jquery-ui/master/ui/i18n/datepicker-es.js"></script>
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script>
+            $(function() {
+                $( ".datepicker" ).datepicker({
+                    minDate: 1,
+                    maxDate: "+17M",
+                    showOn: "button",
+                    buttonImage: "static/images/calendario.gif",
+                    buttonImageOnly: true,
+                    buttonText: "Elegir fecha"
+                },
+                $.datepicker.regional['es']);
+            });
+        </script>
         
         <div>
-            <h1>Casa Dori</h1>
-            Tu casa rural en Yunclillos (Toledo)
+            <a href="imagenes/">
+                <img src="{% static "images/casa.gif" %}" alt="Casa Dori" style="width:600px;height:500px;">
+            </a>
         </div>
         
         <div>
-            <a href="">
-                <img src="static/images/casa.gif" alt="Casa Dori" style="width:600px;height:500px;">
+            <a href="http://www.turismocastillalamancha.es/naturaleza/toledo/" target="_blank">
+                <img src="{% static "images/comida.jpg" %}" alt="Gastronomía" style="width:304px;height:228px;">
+            </a>
+            <a href="http://toledocapitalgastronomia.com/" target="_blank">
+                <img src="{% static "images/berrea.jpg" %}" alt="Naturaleza" style="width:304px;height:228px;">
+            </a>
+            <a href="http://www.toledo-turismo.com/es/agenda-cultural_680" target="_blank">
+               <img src="{% static "images/toledo.jpg" %}" alt="Cultura" style="width:304px;height:228px;">
             </a>
         </div>
         
         <div>
-            <a href="http://www.turismocastillalamancha.es/naturaleza/toledo/">
-                <img src="static/images/comida.jpg" alt="Gastronomía" style="width:304px;height:228px;">
-            </a>
-            <a href="http://toledocapitalgastronomia.com/">
-                <img src="static/images/berrea.jpg" alt="Naturaleza" style="width:304px;height:228px;">
-            </a>
-            <a href="http://www.toledo-turismo.com/es/agenda-cultural_680">
-               <img src="static/images/toledo.jpg" alt="Cultura" style="width:304px;height:228px;">
-            </a>
+            <form method="POST">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Reservar</button>
+            </form>
         </div>
-        
-    </body>
-</html>
+
+{% endblock %}

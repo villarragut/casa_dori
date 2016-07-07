@@ -3,27 +3,32 @@ from django.utils import timezone
 
 
 class Reservation(models.Model):
-    author = models.ForeignKey('auth.User')
-    name = models.CharField(max_length=200)
-    dni = models.CharField(max_length=10)
-    initial_date = models.DateField()
-    final_date = models.DateField()
-    reservation_date = models.DateTimeField(default=timezone.now)
-    confirmation_date = models.DateTimeField(blank=True, null=True)
-    deposit = models.BooleanField(default=False)
-    invoice = models.BooleanField(default=False)
-
-    def confirm(self):
-        self.confirmation_date = timezone.now()
-        self.save()
+    name = models.CharField(max_length=200,
+                            verbose_name="Nombre y apellidos")
+    dni = models.CharField(max_length=32,
+                           verbose_name="D.N.I. o pasaporte")
+    email = models.CharField(max_length=64,
+                             verbose_name="Correo electrónico")
+    phone = models.CharField(max_length=16,
+                             verbose_name="Número de teléfono")
+    initial_date = models.DateField(verbose_name="Fecha de entrada")
+    final_date = models.DateField(verbose_name="Fecha de salida")
+    reservation_date = models.DateTimeField(default=timezone.now,
+                                            verbose_name="Fecha y hora de reserva")
+    reference = models.CharField(max_length=8,
+                                 verbose_name="Localizador")
+    confirmation_date = models.DateTimeField(blank=True, # django
+                                             null=True, # db
+                                             verbose_name="Fecha y hora de confirmación")
+    deposit = models.BooleanField(default=False,
+                                  verbose_name="Fianza pagada")
+    invoice = models.BooleanField(default=False,
+                                  verbose_name="Factura final pagada")
     
-    def pay_deposit(self):
-        self.deposit = True
-        self.save()
-        
-    def pay_invoice(self):
-        self.invoice = True
-        self.save()
+    class Meta:
+        ordering = ["initial_date"]
+        verbose_name = "reserva"
+        verbose_name_plural = "reservas"
 
     def __str__(self):
         return "{0} → {1}".format(self.initial_date, self.final_date)

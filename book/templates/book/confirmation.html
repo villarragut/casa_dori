@@ -1,0 +1,13 @@
+{% extends 'book/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+        
+<p>Muchas gracias por reservar en Casa Dori.</p>
+
+<p>Tu reserva con fecha de entrada el {{ reservation.initial_date }} y fecha de salida el {{ reservation.final_date }} en Casa Dori está pendiente de ser confirmada. Nos pondremos en contacto contigo en breve.</p>
+
+<p>El localizador de tu reserva es <strong>{{ reservation.reference }}</strong></p>
+
+{% endblock %}

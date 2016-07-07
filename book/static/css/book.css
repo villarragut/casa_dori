@@ -1,0 +1,44 @@
+
+
+h1 {
+    font-family: 'Yellowtail';
+    font-weight: bold;
+}
+
+.content {
+    padding-left: 25px;
+}
+
+.page-header {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 48pt;
+    text-decoration: none;
+}
+
+#success {
+	color: #4CAF50;
+}
+
+.hidden_details {
+	display: none;
+	padding: 20px 40px 40px 60px;
+}
+
+table, td, th {
+	border: 1px solid black;
+	text-align: left;
+	padding: 5px;
+}
+
+.col1 {
+    text-align: left;
+    vertical-align: middle;
+    font-weight: bold;
+	background-color: #f2f2f2;
+}
