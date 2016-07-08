@@ -3,13 +3,13 @@ from django.utils import timezone
 
 
 class Reservation(models.Model):
-    name = models.CharField(max_length=200,
+    name = models.CharField(max_length=64,
                             verbose_name="Nombre y apellidos")
-    dni = models.CharField(max_length=32,
+    dni = models.CharField(max_length=64,
                            verbose_name="D.N.I. o pasaporte")
     email = models.CharField(max_length=64,
                              verbose_name="Correo electrónico")
-    phone = models.CharField(max_length=16,
+    phone = models.CharField(max_length=64,
                              verbose_name="Número de teléfono")
     initial_date = models.DateField(verbose_name="Fecha de entrada")
     final_date = models.DateField(verbose_name="Fecha de salida")

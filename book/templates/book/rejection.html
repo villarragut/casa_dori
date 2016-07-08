@@ -3,14 +3,19 @@
 
 {% block content %}
 
-No ha sido posible realizar tu reserva en Casa Dori por el siguiente motivo:
-<br>
-<br>
-{{ error.text }}
-<br>
-<br>
-Te invitamos a que vuelvas a hacer la reserva.
 
+
+
+
+<div id="generic_info">
+	No ha sido posible realizar tu reserva en Casa Dori por el siguiente motivo:
+	<div id="detail">{{ error.text }}</div>
+	Te invitamos a que vuelvas a hacer la reserva.
+</div>
+
+<div>
+	<img src="{% static "images/squirrel_warning.png" %}" alt="Casa Dori" id="squirrel">
+</div>
 
 
 

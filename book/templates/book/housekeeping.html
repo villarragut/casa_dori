@@ -4,103 +4,104 @@
 
 {% block content%}
 
-<h2>Limpiar la base de datos</h2>
-Envía las reservas pasadas al correo de Casa Dori y las elimina de la
-base de datos.
-<br>
-<form action="#" method="get">
-	<input type="submit" class="btn" value="Limpiar" name="clean_button">
-</form>
-<div id="success">{{ successful }}</div>
-
-<h2>Reservas activas</h2>
-
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
-{% if reservations %}
+<div id="housekeeping">
+	<h2>Limpiar la base de datos</h2>
+	Envía las reservas pasadas al correo de Casa Dori y las elimina de la
+	base de datos
+	<br>
+	<form action="#" method="get">
+		<input class="action_button" type="submit" value="Limpiar" name="clean_button">
+	</form>
+	<div id="success">{{ successful }}</div>
 	
-	<h3>Hay <strong>{{ reservations|length }}</strong> reservas</h3>
-
-	{% for reservation in reservations %}
-	<div class="parent">
-		<div class="expand">{{ reservation }}</div>
-		<div class="hidden_details">
-			<table>
-				<tr>
-					<td class="col1">Nombre<br></td>
-					<td>{{ reservation.name }}</td>
-				</tr>
-				<tr>
-					<td class="col1">D.N.I.<br></td>
-					<td>{{ reservation.dni }}</td>
-				</tr>
-				<tr>
-					<td class="col1">Correo electrónico<br></td>
-					<td>{{ reservation.email }}</td>
-				</tr>
-				<tr>
-					<td class="col1">Teléfono</td>
-					<td>{{ reservation.phone }}</td>
-				</tr>
-				<tr>
-					<td class="col1">Fecha de reserva<br></td>
-					<td>{{ reservation.reservation_date }}</td>
-				</tr>
-				<tr>
-					<td class="col1">Localizador</td>
-					<td>{{ reservation.reference }}</td>
-				</tr>
-				<tr>
-					<td class="col1">Confirmación<br></td>
-					<td>
-						{% if reservation.confirmation_date %}
-							{{ reservation.confirmation_date }}
-						{% else %}
-							<form action="#" method="get">
-								<input class="hidden" type="text" value={{ reservation.pk }} name="pk" size="1">
-								<input type="submit" class="btn" value="Confirmar" name="confirm">
-							</form>
-						{% endif %}
-					</td>
-				</tr>
-				<tr>
-					<td class="col1">Fianza<br></td>
-					<td>
-						{% if reservation.deposit %}
-							Hecho
-						{% else %}
-							<form action="#" method="get">
-								<input class="hidden" type="text" value={{ reservation.pk }} name="pk" size="1">
-								<input type="submit" class="btn" value="Depositar" name="deposit">
-							</form>
-						{% endif %}
-					</td>
-				</tr>
-				<tr>
-					<td class="col1">Pago<br></td>
-					<td>
-						{% if reservation.invoice %}
-							Hecho
-						{% else %}
-							<form action="#" method="get">
-								<input class="hidden" type="text" value={{ reservation.pk }} name="pk" size="1">
-								<input type="submit" class="btn" value="Pagar" name="invoice">
-							</form>
-						{% endif %}
-					</td>
-				</tr>
-			</table>
-			<a href="/admin/book/reservation/">Otras modificaciones</a>
+	<h2>Reservas activas</h2>
+	
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	
+	{% if reservations %}
+		
+		<h3>Hay <strong>{{ reservations|length }}</strong> reservas</h3>
+	
+		{% for reservation in reservations %}
+		<div class="parent">
+			<div class="expand">{{ reservation }}</div>
+			<div class="hidden_details">
+				<table>
+					<tr>
+						<td class="col1">Nombre</td>
+						<td>{{ reservation.name }}</td>
+					</tr>
+					<tr>
+						<td class="col1">D.N.I.</td>
+						<td>{{ reservation.dni }}</td>
+					</tr>
+					<tr>
+						<td class="col1">Correo electrónico</td>
+						<td>{{ reservation.email }}</td>
+					</tr>
+					<tr>
+						<td class="col1">Teléfono</td>
+						<td>{{ reservation.phone }}</td>
+					</tr>
+					<tr>
+						<td class="col1">Fecha de reserva</td>
+						<td>{{ reservation.reservation_date }}</td>
+					</tr>
+					<tr>
+						<td class="col1">Localizador</td>
+						<td>{{ reservation.reference }}</td>
+					</tr>
+					<tr>
+						<td class="col1">Confirmación</td>
+						<td>
+							{% if reservation.confirmation_date %}
+								{{ reservation.confirmation_date }}
+							{% else %}
+								<form action="#" method="get">
+									<input class="hidden" type="text" value={{ reservation.pk }} name="pk" size="1">
+									<input type="submit" class="action_button" value="Confirmar" name="confirm">
+								</form>
+							{% endif %}
+						</td>
+					</tr>
+					<tr>
+						<td class="col1">Fianza</td>
+						<td>
+							{% if reservation.deposit %}
+								Hecho
+							{% else %}
+								<form action="#" method="get">
+									<input class="hidden" type="text" value={{ reservation.pk }} name="pk" size="1">
+									<input type="submit" class="action_button" value="Depositar" name="deposit">
+								</form>
+							{% endif %}
+						</td>
+					</tr>
+					<tr>
+						<td class="col1">Pago</td>
+						<td>
+							{% if reservation.invoice %}
+								Hecho
+							{% else %}
+								<form action="#" method="get">
+									<input class="hidden" type="text" value={{ reservation.pk }} name="pk" size="1">
+									<input type="submit" class="action_button" value="Pagar" name="invoice">
+								</form>
+							{% endif %}
+						</td>
+					</tr>
+				</table>
+				<a href="/admin/book/reservation/">Otras modificaciones</a>
+			</div>
+		
 		</div>
-	
-	</div>
-	
-	{% endfor %}
-	
-{% else %}
-	<h3>No hay reservas</h3>
-{% endif %}
-
+		
+		{% endfor %}
+		
+	{% else %}
+		<h3>No hay reservas</h3>
+	{% endif %}
+</div>
 
 <script type="text/javascript">
 $('.expand').click(function() {

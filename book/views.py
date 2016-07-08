@@ -14,6 +14,7 @@ class Error:
         self.text = text
         self.flag = False
         
+# terrible global object :-(        
 error = Error("")
 
 def index(request):
@@ -34,10 +35,10 @@ def index(request):
             if len(reservation.name.split()) < 2:
                 error.text = "Indicar nombre y apellidos"
                 error.flag = True
-            if set(reservation.email) <= set(string.ascii_letters + string.digits + "!#$%&'*+-/=?^_`{|}~"):
+            if not set(reservation.email) <= set(string.ascii_letters + string.digits + "@.!#$%&'*+-/=?^_`{|}~"):
                 error.text = "Caracteres inválidos en el correo electrónico"
                 error.flag = True
-            if set(reservation.phone) <= set(string.digits + "+ "):
+            if not set(reservation.phone) <= set(string.digits + "+ "):
                 error.text = "Caracteres inválidos en el número de teléfono"
                 error.flag = True
             if reservation.initial_date >= reservation.final_date or reservation.initial_date < timezone.now().date():

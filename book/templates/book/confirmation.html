@@ -3,11 +3,23 @@
 
 
 {% block content %}
-        
-<p>Muchas gracias por reservar en Casa Dori.</p>
 
-<p>Tu reserva con fecha de entrada el {{ reservation.initial_date }} y fecha de salida el {{ reservation.final_date }} en Casa Dori está pendiente de ser confirmada. Nos pondremos en contacto contigo en breve.</p>
 
-<p>El localizador de tu reserva es <strong>{{ reservation.reference }}</strong></p>
+
+<div id="generic_info">
+	Muchas gracias por reservar en Casa Dori. <br><br>
+	Tu reserva con fecha de entrada el <strong>{{ reservation.initial_date }}</strong> y
+	fecha de salida el <strong>{{ reservation.final_date }}</strong> en
+	Casa Dori está pendiente de ser confirmada. Nos pondremos en contacto
+	contigo en breve.<br><br>
+	El localizador de tu reserva es <strong>{{ reservation.reference }}</strong>
+</div>
+
+
+<div>
+	<img src="{% static "images/squirrel_house.png" %}" alt="Casa Dori" id="squirrel">
+</div>
+
+
 
 {% endblock %}

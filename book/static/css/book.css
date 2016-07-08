@@ -1,33 +1,130 @@
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
 
+.page-header {
+	background-image: url("/static/images/banner.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-attachment: fixed;
+    background-position: left; 
+    background-color: #4CAF50;
+    margin-top: 0;
+    padding: 1px 5px 5px 5px;
+    text-align: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
 h1 {
-    font-family: 'Yellowtail';
+    font-family: 'Oleo Script';
     font-weight: bold;
 }
 
-.content {
-    padding-left: 25px;
-}
-
-.page-header {
-    background-color: #ff9400;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
-}
-
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 48pt;
+    font-size: 24pt;
     text-decoration: none;
+    color: #ffffff;
+}
+    
+.hand {
+	font-family: 'Satisfy';
+	font-size: 12pt;
+	color: #ffffff;
+}
+
+.content {
+    font-family: 'Roboto Condensed';
+}
+
+#animation {
+	float: left;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+.pics_text {
+	float: left;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	padding-top: 20pt;
+}
+
+.pics {
+	float: left;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+.external {
+	float: left;
+	max-width: 33.33%;
+	width: auto;
+	height: auto;
+}
+
+#now {
+	font-family: 'Satisfy';
+	font-size: 16pt;
+	padding-left: 75pt;
+}
+
+#main_form {
+	float: left;
+	padding: 10pt;
+	width: 200pt;
+}
+
+input {
+  display: block;
+  width: 100%;
+  height: 24px;
+  padding: 6px 12px;
+  font-size: 10pt;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+.button {
+    padding: 10px;
+    color: #000000;
+    background: #cccccc;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.action_button {
+    display: block;
+    width: auto;
+	height: auto;    
+    font-size: 10pt;
+    color: #000000;
+    background: #cccccc;
 }
 
 #success {
 	color: #4CAF50;
+	padding-bottom: 10pt;
+}
+
+.hidden {
+	display: none;
 }
 
 .hidden_details {
 	display: none;
-	padding: 20px 40px 40px 60px;
+	padding: 10px 30px 30px 10px;
 }
 
 table, td, th {
@@ -41,4 +138,94 @@ table, td, th {
     vertical-align: middle;
     font-weight: bold;
 	background-color: #f2f2f2;
+}
+
+#housekeeping {
+	padding: 10pt;
+}
+
+#squirrel {
+	padding-left: 25%;
+	max-width: 50%;
+}
+
+#generic_info {
+	font-size: 12pt;
+	padding: 10pt;
+}
+
+#detail {
+	text-align: center;
+	font-size: 16pt;
+	padding: 10pt;
+}
+
+@media only screen and (min-width: 768px) {
+	
+	.page-header {
+	    padding: 10px 20px 20px 40px;
+	}
+	
+	.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    font-size: 48pt;
+	}
+	
+	.hand {
+		font-size: 20pt;
+	}
+	
+	#main_form {
+		padding: 1%;
+		width: 25%;
+	}
+
+	 #animation {
+	 	float: left;
+	 	padding-left: 4%;
+	 	width: 51%;
+	 }
+
+	.external {
+		float: left;
+	 	width: 17%;
+	 }
+
+	.hidden_details {
+		display: none;
+		padding: 20px 40px 40px 60px;
+	}
+	
+	#housekeeping {
+		padding: 30pt;
+	}
+
+	.pics_text {
+		max-width: 50%;
+	}
+	
+	.pics {
+		max-width: 100%;
+	}
+	
+	#squirrel {
+		float: right;
+		padding: 5%;
+		max-width: 25%;
+	}
+	
+	#generic_info {
+		float:left;
+		max-width: 50%;
+		font-size: 12pt;
+		padding-top: 15%;
+		padding-left: 5%;
+	}
+	
+	#detail {
+		text-align: center;
+		font-size: 16pt;
+		padding: 30pt;
+	}
+
+
 }

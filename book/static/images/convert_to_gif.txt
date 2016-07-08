@@ -1,1 +1,0 @@
-convert -delay 200 -loop 0 casa* casa.gif

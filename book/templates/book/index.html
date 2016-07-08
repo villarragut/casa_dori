@@ -3,12 +3,13 @@
 
 {% block content %}
         
+        <div id="now">¡Reserva ahora!</div>
         
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script type="text/javascript" src="https://raw.githubusercontent.com/jquery/jquery-ui/master/ui/i18n/datepicker-es.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css">
+
         <script>
             $(function() {
                 $( ".datepicker" ).datepicker({
@@ -24,28 +25,26 @@
         </script>
         
         <div>
-            <a href="imagenes/">
-                <img src="{% static "images/casa.gif" %}" alt="Casa Dori" style="width:600px;height:500px;">
-            </a>
-        </div>
-        
-        <div>
-            <a href="http://www.turismocastillalamancha.es/naturaleza/toledo/" target="_blank">
-                <img src="{% static "images/comida.jpg" %}" alt="Gastronomía" style="width:304px;height:228px;">
-            </a>
-            <a href="http://toledocapitalgastronomia.com/" target="_blank">
-                <img src="{% static "images/berrea.jpg" %}" alt="Naturaleza" style="width:304px;height:228px;">
-            </a>
-            <a href="http://www.toledo-turismo.com/es/agenda-cultural_680" target="_blank">
-               <img src="{% static "images/toledo.jpg" %}" alt="Cultura" style="width:304px;height:228px;">
-            </a>
-        </div>
-        
-        <div>
-            <form method="POST">{% csrf_token %}
+            <form id="main_form" method="POST">{% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="save btn btn-default">Reservar</button>
+                <button type="submit" class="button">Reservar</button>
             </form>
+	        <div class="images">
+	            <a href="imagenes/">
+	                <img id="animation" src="{% static "images/casa.gif" %}" alt="Casa Dori">
+	            </a>
+	            <a href="http://toledocapitalgastronomia.com/" target="_blank">
+	                <img class="external" src="{% static "images/comida.jpg" %}" alt="Gastronomía">
+	            </a>
+	            <a href="http://www.turismocastillalamancha.es/naturaleza/toledo/" target="_blank">
+	                <img class="external" src="{% static "images/berrea.jpg" %}" alt="Naturaleza">
+	            </a>
+	            <a href="http://www.toledo-turismo.com/es/agenda-cultural_680" target="_blank">
+	                <img class="external" src="{% static "images/toledo.jpg" %}" alt="Cultura">
+	            </a>
+	        </div>
         </div>
+        
 
+        
 {% endblock %}
