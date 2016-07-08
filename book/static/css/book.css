@@ -51,16 +51,13 @@ h1 {
 
 .pics_text {
 	float: left;
-	max-width: 100%;
-	width: auto;
+	width: 100%;
 	height: auto;
 	padding-top: 20pt;
 }
 
 .pics {
-	float: left;
-	max-width: 100%;
-	width: auto;
+	width: 100%;
 	height: auto;
 }
 

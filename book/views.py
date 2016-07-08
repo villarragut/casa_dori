@@ -63,24 +63,24 @@ def index(request):
                 reservation.save()
                 
                 # email
-                subject = 'Reserva en Casa Dori'
+                subject = 'Solicitud de reserva en Casa Dori'
                 message = """
-                Estimado/a {0}:
+Estimado/a {0}:
                 
                 
-                Gracias por solicitar la reserva de Casa Dori entre el {1} y el {2}.
+Gracias por solicitar la reserva de Casa Dori entre el {1} y el {2}.
                 
-                El localizador de la reserva es {3}
+El localizador de la reserva es {3}
                 
-                En breve, nos pondremos en contacto con usted para confirmar la reserva.
+En breve, nos pondremos en contacto con usted para confirmar la reserva.
                 
                 
-                Un saludo.
+Un saludo.
                 
-                Casa Dori
+  Casa Dori
                 """.format(reservation.name, reservation.initial_date.strftime('%d/%m/%Y'), reservation.final_date.strftime('%d/%m/%Y'), reservation.reference)
                 from_email = settings.EMAIL_HOST_USER
-                to_list = [reservation.email]
+                to_list = [reservation.email, settings.EMAIL_HOST_USER]
                 send_mail(subject, message, from_email, to_list, fail_silently = True)
                 
                 return redirect('confirmation', pk=reservation.pk)
@@ -155,19 +155,19 @@ def housekeeping(request):
         reservation.save()
         
         # email
-        subject = 'Reserva en Casa Dori'
+        subject = 'Confirmación de reserva en Casa Dori'
         message = """
-        Estimado/a {0}:
+Estimado/a {0}:
         
         
-        Su reserva en Casa Dori entre el {1} y el {2} ha sido confirmada.
+Su reserva en Casa Dori entre el {1} y el {2} ha sido confirmada.
         
-        El localizador de la reserva es {3}
+El localizador de la reserva es {3}
         
         
-        Un saludo.
+Un saludo.
         
-        Casa Dori
+  Casa Dori
         """.format(reservation.name, reservation.initial_date.strftime('%d/%m/%Y'), reservation.final_date.strftime('%d/%m/%Y'), reservation.reference)
         from_email = settings.EMAIL_HOST_USER
         to_list = [reservation.email]
