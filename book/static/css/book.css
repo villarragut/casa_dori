@@ -1,51 +1,51 @@
 * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        outline: 0;
-        font-size: 100%;
-        vertical-align: baseline;
-        background: transparent;
-    }
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
 
 .page-header {
 	background-image: url("/static/images/banner.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-    background-attachment: fixed;
-    background-position: left; 
-    background-color: #4CAF50;
-    margin-top: 0;
-    padding: 1px 5px 5px 5px;
-    text-align: center;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	background-attachment: fixed;
+	background-position: left;
+	background-color: #4CAF50;
+	margin-top: 0;
+	padding: 1px 5px 5px 5px;
+	text-align: center;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 h1 {
-    font-family: 'Oleo Script';
-    font-weight: bold;
+	font-family: 'Oleo Script';
+	font-weight: bold;
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    font-size: 24pt;
-    text-decoration: none;
-    color: #ffffff;
+.page-header h1, .page-header h1 a, .page-header h1 a:visited,
+	.page-header h1 a:active {
+	font-size: 72pt;
+	text-decoration: none;
+	color: #ffffff;
 }
-    
+
 .hand {
 	font-family: 'Satisfy';
-	font-size: 12pt;
+	font-size: 32pt;
 	color: #ffffff;
 }
 
 .content {
-    font-family: 'Roboto Condensed';
+	font-family: 'Roboto Condensed';
 }
 
 #animation {
 	float: left;
-	max-width: 100%;
-	width: auto;
+	width: 100%;
 	height: auto;
 }
 
@@ -73,44 +73,45 @@ h1 {
 
 #now {
 	font-family: 'Satisfy';
-	font-size: 16pt;
-	padding-left: 75pt;
+	font-size: 32pt;
+	text-align: center;
 }
 
 #main_form {
 	float: left;
 	padding: 10pt;
-	width: 200pt;
+	width: 90%;
+	font-size: 32pt;
 }
 
 input {
-  display: block;
-  width: 100%;
-  height: 24px;
-  padding: 6px 12px;
-  font-size: 10pt;
-  color: #555555;
-  vertical-align: middle;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
+	display: block;
+	width: 100%;
+	height: 48px;
+	padding: 6px 12px;
+	font-size: 24pt;
+	color: #555555;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
 }
 
 .button {
-    padding: 10px;
-    color: #000000;
-    background: #cccccc;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+	padding: 10px;
+	color: #000000;
+	background: #cccccc;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 
 .action_button {
-    display: block;
-    width: auto;
-	height: auto;    
-    font-size: 10pt;
-    color: #000000;
-    background: #cccccc;
+	display: block;
+	width: auto;
+	height: auto;
+	font-size: 10pt;
+	color: #000000;
+	background: #cccccc;
 }
 
 #success {
@@ -134,9 +135,9 @@ table, td, th {
 }
 
 .col1 {
-    text-align: left;
-    vertical-align: middle;
-    font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: bold;
 	background-color: #f2f2f2;
 }
 
@@ -160,72 +161,67 @@ table, td, th {
 	padding: 10pt;
 }
 
-@media only screen and (min-width: 768px) {
-	
+@media only screen and (min-device-width: 768px) {
 	.page-header {
-	    padding: 10px 20px 20px 40px;
+		padding: 10px 20px 20px 40px;
 	}
-	
-	.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    font-size: 48pt;
+	.page-header h1, .page-header h1 a, .page-header h1 a:visited,
+		.page-header h1 a:active {
+		font-size: 48pt;
 	}
-	
 	.hand {
 		font-size: 20pt;
 	}
-	
 	#main_form {
 		padding: 1%;
 		width: 25%;
+		font-size: 12pt;
 	}
-
-	 #animation {
-	 	float: left;
-	 	padding-left: 4%;
-	 	width: 51%;
-	 }
-
+	#now {
+		padding-left: 48pt;
+		text-align: left;
+	}
+	input {
+		height: 24px;
+		font-size: 10pt;
+	}
+	#animation {
+		float: left;
+		padding-left: 4%;
+		width: 51%;
+	}
 	.external {
 		float: left;
-	 	width: 17%;
-	 }
-
+		width: 17%;
+	}
 	.hidden_details {
 		display: none;
 		padding: 20px 40px 40px 60px;
 	}
-	
 	#housekeeping {
 		padding: 30pt;
 	}
-
 	.pics_text {
 		max-width: 50%;
 	}
-	
 	.pics {
 		max-width: 100%;
 	}
-	
 	#squirrel {
 		float: right;
 		padding: 5%;
 		max-width: 25%;
 	}
-	
 	#generic_info {
-		float:left;
+		float: left;
 		max-width: 50%;
 		font-size: 12pt;
 		padding-top: 15%;
 		padding-left: 5%;
 	}
-	
 	#detail {
 		text-align: center;
 		font-size: 16pt;
 		padding: 30pt;
 	}
-
-
 }
