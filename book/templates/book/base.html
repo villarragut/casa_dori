@@ -10,19 +10,27 @@
 		
 		<link rel="stylesheet" href="{% static 'css/book.css' %}">
 		
+		
+		<!-- tab title -->
 		<title>Casa Dori</title>        
         
     </head>
     
+   
     <body>
+    
+    	<!-- header -->
         <div class="page-header">
             <h1><a href="/">Casa Dori</a></h1>
             <div class="hand">Tu casa rural en Yunclillos (Toledo)</div>
         </div>
+        
+        <!-- content -->
         <div class="content">
             {% block content %}
             {% endblock %}
         </div>
+        
     </body>
     
 </html>

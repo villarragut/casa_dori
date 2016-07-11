@@ -30,12 +30,10 @@ def index(request):
             reservation = form.save(commit=False)
             
             # check conditions
-            text = "bla"
-            error_flag = False
             if len(reservation.name.split()) < 2:
                 error.text = "Indicar nombre y apellidos"
                 error.flag = True
-            if not set(reservation.email) <= set(string.ascii_letters + string.digits + "@.!#$%&'*+-/=?^_`{|}~"):
+            if not set(reservation.email) <= set(string.ascii_letters + string.digits + "@.-_"):
                 error.text = "Caracteres inválidos en el correo electrónico"
                 error.flag = True
             if not set(reservation.phone) <= set(string.digits + "+ "):
