@@ -1,65 +1,56 @@
-{% extends 'book/base.html' %}
+{% extends 'book/main_form.html' %}
 {% load staticfiles %}
 
-{% block content %}
+
+
+{% block extra_content %}
 	
-	<!-- jquery calendar -->        
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script type="text/javascript" src="https://raw.githubusercontent.com/jquery/jquery-ui/master/ui/i18n/datepicker-es.js"></script>
-
-    <script>
-        $(function() {
-            $( ".datepicker" ).datepicker({
-                minDate: 1,
-                maxDate: "+17M",
-                showOn: "button",
-                buttonImage: "static/images/calendario.png",
-                buttonImageOnly: true,
-                buttonText: "Elegir fecha"
-            },
-            $.datepicker.regional['es']);
-        });
-    </script>
-
-    <!-- form -->
-    <div>
     
-       	<div id="now">¡Reserva ahora!</div>
-       	
-        <form id="main_form" method="POST">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="button">Reservar</button>
-        </form>
-     
-    </div>
-    
-    
-    <!-- images section -->
-    <div class="images">
-    
-    	<!-- animated gif -->
-    	<div>
-    	    <a href="imagenes/">
+    <!-- images and icons -->
+	<div id="images_icons">
+	
+		<!-- icons section -->
+	 	<div id="icons_section">
+			<a href="{% url 'maps' %}">
+	            <img class="icon" src="{% static "images/location.png" %}" alt="Ubicación">
+	        </a>
+	        <a href="{% url 'calendar' %}">
+	            <img class="icon" src="{% static "images/calendar.png" %}" alt="Disponibilidad">
+	        </a>
+	        <a href="{% url 'pics' %}">
+	            <img class="icon" src="{% static "images/checklist.png" %}" alt="Características">
+	        </a>
+	        <a href="{% url 'price' %}">
+	            <img class="icon" src="{% static "images/price.png" %}" alt="Tarifas">
+	        </a>
+		
+		</div>
+		
+	    <!-- images section -->
+	    <div id="images_section">
+	    
+	    	<!-- animated gif -->
+    	    <a href="{% url "pics" %}">
             	<img id="animation" src="{% static "images/casa.gif" %}" alt="Casa Dori">
         	</a>
-    	</div>
 
-		<!-- external links -->
-		<div>
-			<a href="http://toledocapitalgastronomia.com/" target="_blank">
-		    	<img class="external" src="{% static "images/comida.jpg" %}" alt="Gastronomía">
-	        </a>
-	        <a href="http://www.turismocastillalamancha.es/naturaleza/toledo/" target="_blank">
-	            <img class="external" src="{% static "images/berrea.jpg" %}" alt="Naturaleza">
-	        </a>
-	        <a href="http://www.toledo-turismo.com/es/agenda-cultural_680" target="_blank">
-	            <img class="external" src="{% static "images/toledo.jpg" %}" alt="Cultura">
-	        </a>
-		</div>
-         
-    </div>
+	
+			<!-- external links -->
+			<div id="external_links">
+				<a href="http://toledocapitalgastronomia.com/" target="_blank">
+			    	<img class="external" src="{% static "images/comida.jpg" %}" alt="Gastronomía">
+		        </a>
+		        <a href="http://www.turismocastillalamancha.es/naturaleza/toledo/" target="_blank">
+		            <img class="external" src="{% static "images/berrea.jpg" %}" alt="Naturaleza">
+		        </a>
+		        <a href="http://www.toledo-turismo.com/es/agenda-cultural_680" target="_blank">
+		            <img class="external" src="{% static "images/toledo.jpg" %}" alt="Cultura">
+		        </a>
+			</div>
+	         
+	    </div>
+	
+	</div>
 
-        
+       
 {% endblock %}

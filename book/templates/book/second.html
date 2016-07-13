@@ -1,0 +1,32 @@
+{% extends 'book/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+
+	<!-- text and pics -->
+	<div>
+	
+		<div class="pics_text">
+			Texto
+			<img src="{% static "images/casa_1.jpg" %}" alt="Casa Dori" class="pics">
+		</div>
+		<div class="pics_text">
+			Texto
+			<img src="{% static "images/casa_2.jpg" %}" alt="Casa Dori" class="pics">
+		</div>
+		<div class="pics_text">
+			Texto
+			<img src="{% static "images/casa_3.jpg" %}" alt="Casa Dori" class="pics">
+		</div>
+		<div class="pics_text">
+			Texto
+			<img src="{% static "images/casa_4.jpg" %}" alt="Casa Dori" class="pics">
+		</div>
+	
+	</div>
+
+
+
+{% endblock %}

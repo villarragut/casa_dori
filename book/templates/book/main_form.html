@@ -1,0 +1,43 @@
+{% extends 'book/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+
+	<!-- jquery calendar -->        
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/jquery/jquery-ui/master/ui/i18n/datepicker-es.js"></script>
+
+    <script>
+        $(function() {
+            $( ".datepicker" ).datepicker({
+                minDate: 1,
+                maxDate: "+17M",
+                showOn: "button",
+                buttonImage: "{% static "images/little_calendar.png" %}",
+                buttonImageOnly: true,
+                buttonText: "Elegir fecha"
+            },
+            $.datepicker.regional['es']);
+        });
+    </script>
+
+    <!-- form -->
+    <div id="text_form">
+    
+       	<div id="now">¡Reserva ahora!</div>
+       	
+        <form id="main_form" method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button">Reservar</button>
+        </form>
+     
+    </div>
+    
+    {% block extra_content %}
+    {% endblock %}
+    
+{% endblock %}

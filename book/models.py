@@ -13,6 +13,7 @@ class Reservation(models.Model):
                              verbose_name="Número de teléfono")
     initial_date = models.DateField(verbose_name="Fecha de entrada")
     final_date = models.DateField(verbose_name="Fecha de salida")
+    guests = models.PositiveSmallIntegerField(verbose_name="Número de huéspedes")
     reservation_date = models.DateTimeField(default=timezone.now,
                                             verbose_name="Fecha y hora de reserva")
     reference = models.CharField(max_length=8,

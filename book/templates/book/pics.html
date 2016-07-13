@@ -6,24 +6,28 @@
 
 
 	<!-- text and pics -->
-	<div>
+	<div id="main_pics_container">
 	
-		<div class="pics_text">
-			Texto
-			<img src="{% static "images/casa_1.jpg" %}" alt="Casa Dori" class="pics">
+		
+		<div class="main_pics">
+			Planta baja
+			<a href="{% url 'floors' '0' %}">
+				<img src="{% static "images/casa_1.jpg" %}" alt="Casa Dori" class="pics">
+			</a>
 		</div>
-		<div class="pics_text">
-			Texto
-			<img src="{% static "images/casa_2.jpg" %}" alt="Casa Dori" class="pics">
+		
+		<div class="main_pics">
+			Primera planta
+			<a href="{% url 'floors' '1' %}">
+				<img src="{% static "images/casa_2.jpg" %}" alt="Casa Dori" class="pics">
+			</a>		</div>
+		<div class="main_pics">
+			Segunda planta
+			<a href="{% url 'floors' '2' %}">
+				<img src="{% static "images/casa_3.jpg" %}" alt="Casa Dori" class="pics">
+			</a>
 		</div>
-		<div class="pics_text">
-			Texto
-			<img src="{% static "images/casa_3.jpg" %}" alt="Casa Dori" class="pics">
-		</div>
-		<div class="pics_text">
-			Texto
-			<img src="{% static "images/casa_4.jpg" %}" alt="Casa Dori" class="pics">
-		</div>
+
 	
 	</div>
 

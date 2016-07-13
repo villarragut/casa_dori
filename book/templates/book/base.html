@@ -5,7 +5,6 @@
     <head>
 
 		<link href="//fonts.googleapis.com/css?family=Oleo Script&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-		<link href="//fonts.googleapis.com/css?family=Roboto Condensed&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 		<link href="//fonts.googleapis.com/css?family=Satisfy&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 		
 		<link rel="stylesheet" href="{% static 'css/book.css' %}">
@@ -21,7 +20,7 @@
     
     	<!-- header -->
         <div class="page-header">
-            <h1><a href="/">Casa Dori</a></h1>
+            <div id="big_title"><a href="{% url 'index' %}">Casa Dori</a></div>
             <div class="hand">Tu casa rural en Yunclillos (Toledo)</div>
         </div>
         

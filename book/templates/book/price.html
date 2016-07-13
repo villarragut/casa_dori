@@ -1,0 +1,39 @@
+{% extends 'book/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<div >
+	<table id="price">
+		<tr>
+			<td class="col1">Personas</td>
+			<td>Contenido</td>
+		</tr>
+		<tr>
+			<td class="col1">4 (mínimo)</td>
+			<td>Planta baja + Terraza</td>
+		</tr>
+		<tr>
+			<td class="col1">Entre 5 y 9</td>
+			<td>Planta baja + Terraza + Habitaciones necesarias planta superior</td>
+		</tr>
+		<tr>
+			<td class="col1">10 (máximo)</td>
+			<td>Toda la casa</td>
+		</tr>
+
+	</table>
+
+	<div id="price_text">
+		<strong>Importante</strong><br>
+
+		La estancia mínima son 2 noches<br>
+
+		El precio persona/noche es de 20 €<br>
+		
+	</div>
+	
+</div>
+
+{% endblock %}

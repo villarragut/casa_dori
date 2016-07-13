@@ -1,0 +1,16 @@
+{% extends 'book/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+	<div id="map_text">
+		<strong>Casa Rural Dori</strong><br>
+		Plaza Calvo Sotelo, 7<br>
+		45591 Yunclillos, Toledo, España<br><br>
+		Teléfono +34 666666666
+	</div>
+	
+	<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6110.678903836377!2d-3.99061!3d40.0232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2b08db01213bdd69!2sCasa+Dori+(+Casa+Rural)!5e0!3m2!1ses!2sus!4v1468278218932" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+{% endblock %}
