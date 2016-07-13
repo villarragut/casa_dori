@@ -40,6 +40,7 @@
 	color: #ffffff;
 	display: block;
 	font-size: 32pt;
+	text-align: center;
 }
 
 
@@ -61,7 +62,7 @@
 	display: block;
 	float: left;
 	width: 100%;
-}	
+}
 
 #now {
 	font-family: 'Satisfy';
@@ -142,7 +143,7 @@ input {
 	width: 100%;
 }
 
-main_pics {
+.main_pics {
 	display: block;
 	width: 100%;
 	padding-top: 10pt;
@@ -240,14 +241,16 @@ table, td, th {
 	display: block;
 	font-size: 14pt;
 	text-align: left;
-	padding-left: 10pt;
-	padding-top: 20pt;
-	width: 100%;
+	padding-left: 25%;
+	padding-top: 50pt;
+	width: 75%;
 }
 
 #map {
 	display: block;
 	width: 100%;
+	min-height: 600pt;
+	padding-top: 50pt;
 }
 
   /************/
@@ -257,6 +260,8 @@ table, td, th {
 #calendar {
 	display: block;
 	width: 100%;
+	min-height: 500pt;
+
 }
 
   /*********/
@@ -264,16 +269,16 @@ table, td, th {
 /*********/
 
 #price {
-    width:100%; 
+    width:100%;
     padding-top: 20pt;
-   }	
+   }
 
 #price_text {
 	text-align: center;
 	font-size: 20pt;
 	padding-top: 20pt;
 }
-	
+
 
 
 
@@ -284,7 +289,7 @@ table, td, th {
 /***********/
 
 @media only screen and (min-device-width: 768px) {
-	
+
 	  /**********/
 	 /* header */
 	/**********/
@@ -296,60 +301,60 @@ table, td, th {
 		word-spacing: 20%;
 		padding-left: 0.8%;
 	}
-	
+
 	.hand {
 		padding-top: 50pt;
 		padding-right: 0.8%;
 		font-size: 20pt;
 		float: right;
 	}
-	
-	
+
+
 	  /*********/
 	 /* index */
 	/*********/
-	
+
 	#text_form {
 		width: 25%;
-	}	
-	
+	}
+
 	#now {
 		padding-top: 10pt;
 		padding-left: 18%;
 		font-size: 150%;
 	}
-	
+
 	#main_form {
 		padding: 3%;
 		font-size: 12pt;
 	}
-	
+
 	input {
 		height: 24px;
 		font-size: 10pt;
 	}
-	
+
 	#images_icons {
 		float: right;
 		width: 70%;
 		padding-left: 5%;
 	}
-	
+
 	.icon {
 		display: inline;
 		width: 23.75%;
 	}
-	
+
 	#animation {
 		float: left;
 		width: 75%;
 	}
-	
+
 	#external_links {
 		float: right;
 		width: 25%;
 	}
-	
+
 	.external {
 		display: block;
 		width: 100%;
@@ -359,7 +364,7 @@ table, td, th {
 	  /********/
 	 /* pics */
 	/********/
-		
+
 	.main_pics {
 		float: left;
 		width: 29%;
@@ -369,35 +374,35 @@ table, td, th {
 	  /**********/
 	 /* floors */
 	/**********/
-	
+
 	.pics_text {
 		width: 50%;
 	}
-	
+
 
 	  /****************/
 	 /* housekeeping */
 	/****************/
-	
+
 	.hidden_details {
 		padding: 20px 40px 40px 60px;
 	}
-	
+
 	#housekeeping {
 		padding: 30pt;
 	}
-	
-	
+
+
 	  /******************************/
 	 /* confirmation and rejection */
 	/******************************/
-	
+
 	#squirrel {
 		float: right;
 		padding: 5%;
 		max-width: 25%;
 	}
-	
+
 	#generic_info {
 		float: left;
 		max-width: 50%;
@@ -405,7 +410,7 @@ table, td, th {
 		padding-top: 15%;
 		padding-left: 5%;
 	}
-	
+
 	#detail {
 		padding: 30pt;
 	}
@@ -413,44 +418,46 @@ table, td, th {
 	  /********/
 	 /* maps */
 	/********/
-	
+
 	#map_text {
 		float: left;
 		padding-left: 10%;
 		padding-top: 100pt;
 		width: 30%;
 	}
-	
+
 	#map {
 		float: right;
 		width: 50%;
+		min-height: 100pt;
 		padding-right: 10%;
 		padding-top: 10pt;
 	}
-	
+
 	  /************/
 	 /* calendar */
 	/************/
-	
+
 	#calendar {
 		float: right;
 		width: 65%;
+		min-height: 100pt;
 		padding-left: 5%;
 		padding-right: 3%;
 		padding-top: 20pt;
 	}
-	
+
 	  /*********/
 	 /* price */
 	/*********/
-	
+
 	#price {
-	    width:60%; 
-	    margin-left:25%; 
+	    width:60%;
+	    margin-left:25%;
 	    margin-right:15%;
 	    padding-top: 50pt;
-    }	
+    }
 
-	
+
 
 }
